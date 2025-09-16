@@ -13,3 +13,9 @@ The only external dependency is [https://highlightjs.org/](https://highlightjs.o
 Deployment:
 
 ssh admin@3.84.126.152
+cd revirtualis-net
+git pull
+
+# if necessary
+cd dist
+forever start --uid "revirtualis-net" --minUptime 1000 --spinSleepTime 1000 --append -c "http-server -p 5273 -g -i true -d false" ./

@@ -117,7 +117,7 @@ button {
   padding: var(--spacing-size-2);
   border-radius: 8px;
   cursor: pointer;
-  color: var(--color-header-text);
+  color: var(--color-card-text);
   font-size: var(--font-size-p);
 }
 
@@ -165,7 +165,7 @@ button {
 
 .card {
   background: var(--color-card-bg);
-  padding: var(--spacing-size-6) var(--spacing-size-4);
+  padding: var(--spacing-size-4) var(--spacing-size-4);
   border-radius: var(--spacing-size-2);
   /* box-shadow: 8px 8px 24px 0px rgb(22, 23, 29); */
   max-width: 1000px;
@@ -532,7 +532,7 @@ button {
 
 @media (max-width: 600px) {
   .card {
-    padding: var(--spacing-size-6) 0px;
+    padding: var(--spacing-size-4) 0px;
   }
 }
 
