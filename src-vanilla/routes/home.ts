@@ -15,7 +15,7 @@ export const createRoute = (
     .replace(
       '{BODY}',
       createLayout(
-        createHomePage(firstPost, posts.slice(1, 3), featuredGame),
+        createHomePage(firstPost, posts.slice(0, 5), featuredGame),
         createSidebar('home')
       )
     )
