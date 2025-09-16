@@ -25,5 +25,5 @@
     "noUncheckedSideEffectImports": true,
     "noImplicitAny": false
   },
-  "include": ["src"]
+  "include": ["src", "src-vanilla"]
 }

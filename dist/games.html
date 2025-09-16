@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Games</title>
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="/dark.css" />
+    <link rel="stylesheet" href="/light.css" />
+    <link rel="stylesheet" href="/image-carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <script src="/scripts/theme.js"></script>
+    <script src="/scripts/image-carousel-events.js"></script>
+    <script src="/scripts/side-bar.js"></script>
+  </head>
+  <body style="background-color: var(--color-bg1)">
+    
+
+<nav
+  style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;"
+>
+  <div class="top-bar-logo-container">
+    <button class="menu-button" aria-label="Open menu" onClick="window.sideBar.open();">
+      ☰
+    </button>
+    <div style="display: inline-flex; align-items: center; gap: 8px;">
+      <img
+        src="/favicon-lg.png"
+        alt="logo"
+        style="width:32px; height:32px;"
+      />
+      <a
+        href="/"
+        style="text-decoration: none; font-weight: bold; font-size: 1.5em; font-family: DataLatin; color: var(--color-header-text);"
+      >
+        Revirtualis
+      </a>
+    </div>
+  </div>
+  <div class="top-bar-menu-container">
+  </div>
+  <button
+    id="theme-toggle"
+    onClick="window.theme.toggleTheme();"
+    class="theme-toggle"
+    aria-label="Switch to light/dark theme"
+    title="Switch to light/dark theme"
+  >
+    *
+  </button>
+</nav>  
+  
+<div style="display: flex; position: relative;">
+  <div class="side-bar-container">
+    <button class="side-bar-close" onClick="window.sideBar.close();">X</button>
+    
+<div class="side-bar">
+  <a href="/games.html" class="sidebar-link active">
+    <span class="sidebar-link-text">Games</span>
+  </a>
+  <a href="/blog.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Blog</span>
+  </a>
+  <a href="/tags.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Tags</span>
+  </a>
+  <a href="/about.html" class="sidebar-link ">
+    <span class="sidebar-link-text">About</span>
+  </a>
+</div>
+  </div>
+  <main>
+    
+<h1>Games</h1>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+
+<section class="card post game-post" style="max-width: 400px;">
+  <div class="game-post-info" style="width: 100%;">
+    <div
+      style="text-align: center;"
+    >
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/regem-ludos"
+      >
+        <img
+          src="/img/ss-regem-ludos/cover.png"
+          alt=Regem Ludos
+          class="game-post-cover-image"
+        />
+      </a>
+    </div>
+    <br>
+    <h3>
+      <img
+        src=/img/ss-regem-ludos/icon.png
+        alt=Regem Ludos
+        class="game-post-cover-icon"
+      />
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/regem-ludos"
+      >
+        <span>Regem Ludos</span>
+      </a>
+    </h3>
+    <p
+        style="opacity: 0.8;"
+    >
+      Regem Ludos is an isometric pixel art rpg that runs in the browser. It features an engaging story, a robust battle system, minigames, puzzles, much more!
+    </p>
+    <p
+      style="opacity: 0.6;"
+    >
+      Release Date: TBA | rpg
+    </p>
+    <div class="game-post-links">
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="card post game-post" style="max-width: 400px;">
+  <div class="game-post-info" style="width: 100%;">
+    <div
+      style="text-align: center;"
+    >
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/ada-in-the-classroom"
+      >
+        <img
+          src="/img/ss-ada-in-the-classroom/cover.png"
+          alt=Adalais in the Classroom
+          class="game-post-cover-image"
+        />
+      </a>
+    </div>
+    <br>
+    <h3>
+      <img
+        src=/img/ss-ada-in-the-classroom/icon.png
+        alt=Adalais in the Classroom
+        class="game-post-cover-icon"
+      />
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/ada-in-the-classroom"
+      >
+        <span>Adalais in the Classroom</span>
+      </a>
+    </h3>
+    <p
+        style="opacity: 0.8;"
+    >
+      A dialogue tree adventure game built with the In2 engine.
+    </p>
+    <p
+      style="opacity: 0.6;"
+    >
+      Release Date: 2017-02-28 | narrative,puzzle
+    </p>
+    <div class="game-post-links">
+      
+<div>
+  <a
+    href=https://benjamin-t-brown.github.io/icomic1/
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-web.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Play on the Web
+  </a>
+</div>
+  
+
+<div>
+  <a
+    href=https://github.com/benjamin-t-brown/icomic1
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-github.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Github
+  </a>
+</div>
+  
+    </div>
+  </div>
+  
+</section>
+
+<section class="card post game-post" style="max-width: 400px;">
+  <div class="game-post-info" style="width: 100%;">
+    <div
+      style="text-align: center;"
+    >
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/vortexxe"
+      >
+        <img
+          src="/img/ss-vortexxe/cover.png"
+          alt=VortexXE
+          class="game-post-cover-image"
+        />
+      </a>
+    </div>
+    <br>
+    <h3>
+      <img
+        src=/img/ss-vortexxe/icon.png
+        alt=VortexXE
+        class="game-post-cover-icon"
+      />
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/vortexxe"
+      >
+        <span>VortexXE</span>
+      </a>
+    </h3>
+    <p
+        style="opacity: 0.8;"
+    >
+      The deluxe edition of Vortex, an Asteroids-like featuring even more powerups, guns, and other new mechanics!
+    </p>
+    <p
+      style="opacity: 0.6;"
+    >
+      Release Date: 2025-03-30 | arcade
+    </p>
+    <div class="game-post-links">
+      
+<div>
+  <a
+    href=https://benjamin-t-brown.github.io/vortexxe/
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-web.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Play on the Web
+  </a>
+</div>
+  
+
+<div>
+  <a
+    href=https://github.com/benjamin-t-brown/vortexxe
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-github.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Github
+  </a>
+</div>
+  
+    </div>
+  </div>
+  
+</section>
+
+<section class="card post game-post" style="max-width: 400px;">
+  <div class="game-post-info" style="width: 100%;">
+    <div
+      style="text-align: center;"
+    >
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/zag2000"
+      >
+        <img
+          src="/img/ss-zag2000/cover.png"
+          alt=Zag 2000
+          class="game-post-cover-image"
+        />
+      </a>
+    </div>
+    <br>
+    <h3>
+      <img
+        src=/img/ss-zag2000/icon.png
+        alt=Zag 2000
+        class="game-post-cover-icon"
+      />
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/zag2000"
+      >
+        <span>Zag 2000</span>
+      </a>
+    </h3>
+    <p
+        style="opacity: 0.8;"
+    >
+      The classic game of Centipede with a locomotive skin and a few other twists.
+    </p>
+    <p
+      style="opacity: 0.6;"
+    >
+      Release Date: 2025-04-08 | arcade
+    </p>
+    <div class="game-post-links">
+      
+<div>
+  <a
+    href=https://benjamin-t-brown.github.io/zag2000/
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-web.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Play on the Web
+  </a>
+</div>
+  
+
+<div>
+  <a
+    href=https://github.com/benjamin-t-brown/zag2000
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-github.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Github
+  </a>
+</div>
+  
+    </div>
+  </div>
+  
+</section>
+
+<section class="card post game-post" style="max-width: 400px;">
+  <div class="game-post-info" style="width: 100%;">
+    <div
+      style="text-align: center;"
+    >
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/scoundrel"
+      >
+        <img
+          src="/img/ss-scoundrel/cover.png"
+          alt=Scoundrel
+          class="game-post-cover-image"
+        />
+      </a>
+    </div>
+    <br>
+    <h3>
+      <img
+        src=/img/ss-scoundrel/icon.png
+        alt=Scoundrel
+        class="game-post-cover-icon"
+      />
+      <a
+        style="text-decoration: none;"
+        href="/game-posts/scoundrel"
+      >
+        <span>Scoundrel</span>
+      </a>
+    </h3>
+    <p
+        style="opacity: 0.8;"
+    >
+      The classic solitaire card game adventuring rogue-like.
+    </p>
+    <p
+      style="opacity: 0.6;"
+    >
+      Release Date: 2025-03-23 | card
+    </p>
+    <div class="game-post-links">
+      
+<div>
+  <a
+    href=https://benjamin-t-brown.github.io/scoundrel/
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-web.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Play on the Web
+  </a>
+</div>
+  
+
+<div>
+  <a
+    href=https://github.com/benjamin-t-brown/scoundrel
+    target="_blank"
+    rel="noopener noreferrer"
+    class="game-post-link"
+  >
+    <img
+      src=/img/icons/icon-github.png
+      alt="Web"
+      class="game-post-icon"
+    />
+    Github
+  </a>
+</div>
+  
+    </div>
+  </div>
+  
+</section>
+</div>
+<footer>
+  <p>All games displayed here are made for Revirtualis.</p>
+</footer>
+  </main>
+</div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="/scripts/highlight.js"></script>
+</html>

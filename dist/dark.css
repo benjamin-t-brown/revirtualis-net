@@ -1,0 +1,22 @@
+.theme-dark {
+  --color-bg1: #1e1e24;
+  --color-bg2: #2e2e36;
+  --color-bg3: #1e1e24;
+  --color-bg4: #2e2e36;
+  --color-card-bg: #1e1e24;
+  --color-card-text: rgba(255, 255, 255, 0.8);
+  --color-header-text: #fff;
+  --color-h2-text: #58bde1;
+
+  --color-border1: #F47E1B;
+  --color-border2: #42CAFD;
+  --color-border3: #999;
+  --color-primary1: #F47E1B;
+  --color-primary2: #FFE100;
+  --color-primary3: #FFC900;
+  --color-primary4: #EBE389;
+  --color-text1: #fff;
+  --color-text2: #ddd;
+  --color-confirm: #FF9B00;
+  --color-error: #FF0000;
+}

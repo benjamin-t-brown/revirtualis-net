@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>About</title>
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="/dark.css" />
+    <link rel="stylesheet" href="/light.css" />
+    <link rel="stylesheet" href="/image-carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <script src="/scripts/theme.js"></script>
+    <script src="/scripts/image-carousel-events.js"></script>
+    <script src="/scripts/side-bar.js"></script>
+  </head>
+  <body style="background-color: var(--color-bg1)">
+    
+
+<nav
+  style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;"
+>
+  <div class="top-bar-logo-container">
+    <button class="menu-button" aria-label="Open menu" onClick="window.sideBar.open();">
+      ☰
+    </button>
+    <div style="display: inline-flex; align-items: center; gap: 8px;">
+      <img
+        src="/favicon-lg.png"
+        alt="logo"
+        style="width:32px; height:32px;"
+      />
+      <a
+        href="/"
+        style="text-decoration: none; font-weight: bold; font-size: 1.5em; font-family: DataLatin; color: var(--color-header-text);"
+      >
+        Revirtualis
+      </a>
+    </div>
+  </div>
+  <div class="top-bar-menu-container">
+  </div>
+  <button
+    id="theme-toggle"
+    onClick="window.theme.toggleTheme();"
+    class="theme-toggle"
+    aria-label="Switch to light/dark theme"
+    title="Switch to light/dark theme"
+  >
+    *
+  </button>
+</nav>  
+  
+<div style="display: flex; position: relative;">
+  <div class="side-bar-container">
+    <button class="side-bar-close" onClick="window.sideBar.close();">X</button>
+    
+<div class="side-bar">
+  <a href="/games.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Games</span>
+  </a>
+  <a href="/blog.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Blog</span>
+  </a>
+  <a href="/tags.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Tags</span>
+  </a>
+  <a href="/about.html" class="sidebar-link active">
+    <span class="sidebar-link-text">About</span>
+  </a>
+</div>
+  </div>
+  <main>
+    
+<h1>About</h1>
+<section class="post card">
+<p className="post-content">
+Hi, welcome to Revirtualis. In here is a one-stop-shop for certain,
+various games, projects, music, coding, and the articles and news about
+them. The goal of this site is to showcase some interesting things,
+explain a bit about them, and give you the ambition to create more on
+your own.
+</p>
+<p className="post-content">Happy coding!</p>
+<p className="post-content">
+Author: Benjamin
+<br />
+<a
+  style="color: var(--color-primary1);"
+  href="https://github.com/benjamin-t-brown"
+>
+  https://github.com/benjamin-t-brown
+</a>
+</p>
+</section>
+<footer></footer>
+
+  </main>
+</div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="/scripts/highlight.js"></script>
+</html>

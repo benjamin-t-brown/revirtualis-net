@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Tags</title>
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="/dark.css" />
+    <link rel="stylesheet" href="/light.css" />
+    <link rel="stylesheet" href="/image-carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <script src="/scripts/theme.js"></script>
+    <script src="/scripts/image-carousel-events.js"></script>
+    <script src="/scripts/side-bar.js"></script>
+  </head>
+  <body style="background-color: var(--color-bg1)">
+    
+
+<nav
+  style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;"
+>
+  <div class="top-bar-logo-container">
+    <button class="menu-button" aria-label="Open menu" onClick="window.sideBar.open();">
+      ☰
+    </button>
+    <div style="display: inline-flex; align-items: center; gap: 8px;">
+      <img
+        src="/favicon-lg.png"
+        alt="logo"
+        style="width:32px; height:32px;"
+      />
+      <a
+        href="/"
+        style="text-decoration: none; font-weight: bold; font-size: 1.5em; font-family: DataLatin; color: var(--color-header-text);"
+      >
+        Revirtualis
+      </a>
+    </div>
+  </div>
+  <div class="top-bar-menu-container">
+  </div>
+  <button
+    id="theme-toggle"
+    onClick="window.theme.toggleTheme();"
+    class="theme-toggle"
+    aria-label="Switch to light/dark theme"
+    title="Switch to light/dark theme"
+  >
+    *
+  </button>
+</nav>  
+  
+<div style="display: flex; position: relative;">
+  <div class="side-bar-container">
+    <button class="side-bar-close" onClick="window.sideBar.close();">X</button>
+    
+<div class="side-bar">
+  <a href="/games.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Games</span>
+  </a>
+  <a href="/blog.html" class="sidebar-link ">
+    <span class="sidebar-link-text">Blog</span>
+  </a>
+  <a href="/tags.html" class="sidebar-link active">
+    <span class="sidebar-link-text">Tags</span>
+  </a>
+  <a href="/about.html" class="sidebar-link ">
+    <span class="sidebar-link-text">About</span>
+  </a>
+</div>
+  </div>
+  <main>
+    
+<h1>Tags</h1>
+<section class="card post">
+<p>
+This is a cumulative list of tags used in the blog.
+</p>
+<p>
+<a href='/blog-tags/js13k' class='list-tag' style="color: var(--color-primary1)">js13k</a>
+</p>
+</section>
+
+  </main>
+</div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="/scripts/highlight.js"></script>
+</html>
