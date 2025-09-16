@@ -4,7 +4,7 @@
   --spacing-size-3: 12px;
   --spacing-size-4: 16px;
   --spacing-size-5: 32px;
-  --spacing-size-6: 64px;
+  --spacing-size-6: 48px;
 
   --font-size-p: 1.1rem;
   --font-size-h1: 2rem;
@@ -165,7 +165,7 @@ button {
 
 .card {
   background: var(--color-card-bg);
-  padding: var(--spacing-size-4);
+  padding: var(--spacing-size-6) var(--spacing-size-4);
   border-radius: var(--spacing-size-2);
   /* box-shadow: 8px 8px 24px 0px rgb(22, 23, 29); */
   max-width: 1000px;
@@ -527,6 +527,12 @@ button {
   }
   .menu-button {
     display: inline;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: var(--spacing-size-6) 0px;
   }
 }
 
