@@ -531,7 +531,7 @@ pre code {
     display: block;
     position: absolute;
     right: 0px;
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(7px);
   }
   .menu-button {
     display: inline;
