@@ -16,7 +16,7 @@ export const createRelatedPosts = (
         createBlogPost(postListContent, { showTitle: true, isPreview: true })
       )
       .join('\n') ||
-    '<div class="card post"><p style="opacity: 0.5;">No related posts.</p></div>';
+    '<section class="card post"><p style="opacity: 0.5;">No related posts.</p></section>';
   return /*html*/ `
 <div class='card post'><h2 class="recent-posts-title">Related Posts</h2></div>
 ${relatedPostsHtml}

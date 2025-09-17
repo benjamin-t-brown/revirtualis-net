@@ -1,4 +1,5 @@
 import { GamePostData } from '../types';
+import { createDateTime } from './datetime';
 import { createImageCarousel } from './image-carousel';
 
 const createGameLink = (url: string, text: string, iconUrl: string) => {
@@ -66,16 +67,31 @@ export const createGamePost = (
     <p
       style="opacity: 0.6;"
     >
-      Release Date: ${game.releaseDate} | ${game.genre}
+      Release Date: ${createDateTime(game.releaseDate)} | ${game.genre}
     </p>
     <div class="game-post-links">
       ${[
-        game.webLink && createGameLink(game.webLink, 'Play on the Web', '/img/icons/icon-web.png'),
-        game.demoLink && createGameLink(game.demoLink, 'Demo', '/img/icons/icon-demo.png'),
-        game.steamLink && createGameLink(game.steamLink, 'Steam', '/img/icons/icon-steam.png'),
-        game.itchLink && createGameLink(game.itchLink, 'ItchIo', '/img/icons/icon-itch.png'),
-        game.githubLink && createGameLink(game.githubLink, 'Github', '/img/icons/icon-github.png')
-      ].filter(Boolean).join('\n')}
+        game.webLink &&
+          createGameLink(
+            game.webLink,
+            'Play on the Web',
+            '/img/icons/icon-web.png'
+          ),
+        game.demoLink &&
+          createGameLink(game.demoLink, 'Demo', '/img/icons/icon-demo.png'),
+        game.steamLink &&
+          createGameLink(game.steamLink, 'Steam', '/img/icons/icon-steam.png'),
+        game.itchLink &&
+          createGameLink(game.itchLink, 'ItchIo', '/img/icons/icon-itch.png'),
+        game.githubLink &&
+          createGameLink(
+            game.githubLink,
+            'Github',
+            '/img/icons/icon-github.png'
+          ),
+      ]
+        .filter(Boolean)
+        .join('\n')}
     </div>
   </div>
   ${

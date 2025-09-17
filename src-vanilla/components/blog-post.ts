@@ -1,4 +1,5 @@
 import { BlogPostData } from '../types';
+import { createDateTime } from './datetime';
 
 export const createBlogPost = (
   post: BlogPostData,
@@ -17,7 +18,7 @@ export const createBlogPost = (
   ${args.showTitle ? `<h3><a href='/blog-posts/${post.id}.html' class='post-link ${args.isPreview ? 'post-link-preview' : ''}'>${post.title}</a></h3>` : ''}
   <div class="post-info">
   <div class="post-header">
-    <div class="date-time">${new Date(post.createdAt).toLocaleDateString()}</div>
+    <div>${createDateTime(post.createdAt)}</div>
     <span class="post-author">${post.author}</span>
   </div>
   <div>

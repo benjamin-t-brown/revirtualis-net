@@ -121,6 +121,14 @@ button {
   font-size: var(--font-size-p);
 }
 
+pre code {
+  font-size: 0.8rem;
+}
+
+.hidden {
+  filter: blur(4px);
+}
+
 .side-bar-container {
     
 }
