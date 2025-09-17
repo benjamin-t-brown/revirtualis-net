@@ -5,7 +5,7 @@ export const createLayout = (childrenHtml: string, sidebarHtml: string) => {
 ${createTopBar()}
 <div style="display: flex; position: relative;">
   <div class="side-bar-container">
-    <button class="side-bar-close" onClick="window.sideBar.close();">X</button>
+    <button class="side-bar-close" onClick="window.sideBar.close();" aria-label="Close sidebar">X</button>
     ${sidebarHtml}
   </div>
   <main>
