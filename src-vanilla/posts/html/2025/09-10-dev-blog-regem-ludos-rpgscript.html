@@ -6,6 +6,7 @@ author: Benjamin
 tags: [regem-ludos]
 excerpt: Let's talk about Rpgscript and the cutscene engine for Regem Ludos.
 scripts: [rpgscriptlang, highlightjs, iframecode]
+createdAt: 2025-10-07T12:00:00Z
 ---
 
 <p>
@@ -169,7 +170,7 @@ scripts: [rpgscriptlang, highlightjs, iframecode]
 <p>
   I first want to know how to make this: Line by line the scene progresses where
   the characters speak to each other; each line is advanced by the player
-  pressing a button. Let's ignore all actors and art for now, and simply thin,
+  pressing a button. Let's ignore all actors and art for now, and simply think
   of the text. Like a book. We'll call this a 'dialogue'.
 </p>
 <p>
@@ -230,7 +231,7 @@ const lines = [
 </p>
 <p>
   An approach like this works for text-only games where there's no action, but
-  that isn't the goal of this exercise. It is merely the first step!
+  that isn't the goal of this journey. It is merely the first step!
 </p>
 <h4>Step 2: Actors As Puppets</h4>
 <p>
@@ -717,14 +718,14 @@ Chloe: "Right."
 }
 </code></pre>
 <p>
-  These `is`, `isnot`, and `all` statements all imply some sort of variable
-  storage. The engine has to check the value in that storage, then evaluate the
-  expression. Rpgscript implements this as a global key -> value store which can
-  be serialized into JSON. Global storage is known to be traditionally bad
-  design, but there's a fine balance that Rpgscript is trying to ride between
-  being understandable to any kind of person who reads it, and programmers who
-  implement it. I've already introduced logic via if statements. Introducing
-  variable scope here is... well it's scope creep.
+  These `is`, `isnot`, and `all`, and other similar statements not included, all
+  imply some sort of variable storage. The engine has to check the value in that
+  storage, then evaluate the expression. Rpgscript implements this as a global
+  key -> value store which can be serialized into JSON. Global storage is known
+  to be traditionally bad design, but there's a fine balance that Rpgscript is
+  trying to ride between being understandable to any kind of person who reads
+  it, and programmers who implement it. I've already introduced logic via if
+  statements. Introducing variable scope here is... well it's scope creep.
 </p>
 <p>
   Variables are set with an engine command and can be nested in JSON with dot
@@ -787,7 +788,9 @@ Chloe: "Right."
   I'd like to present the ultimate example. Here is an application with a
   fully-functional Rpgscript parser and scene runner. It runs the example
   cutscene one time, and depending on the state of the app, will run a second,
-  far more silly one I've written myself.
+  far more silly one I've written myself. It will highlight the current line of
+  Rpgscript that is being waited on, as well as allow you to reset and restart
+  the cutscene at any point.
 </p>
 <p>
   Here you can view an Rpgscript scene and even edit it yourself! Can you alter
