@@ -22,7 +22,7 @@ export const convertToJson = async (filePath: string) => {
   const fileName = path.basename(filePath);
   const { metadata, content: postContent } = parseFrontMatter(html);
 
-  let postId = metadata.id ?? randomUUID() + '-' + fileName.slice(0, 20);
+  let postId = metadata.id ?? randomUUID() + '-' + fileName.slice(0, -5);
   // If postId ends in a non-digit or letter, remove it
   if (/[^a-zA-Z0-9]$/.test(postId)) {
     postId = postId.slice(0, -1);
