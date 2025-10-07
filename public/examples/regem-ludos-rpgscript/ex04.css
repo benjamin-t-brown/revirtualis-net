@@ -1,0 +1,87 @@
+body {
+  background: #eee;
+  color: #000;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+  white-space: pre;
+  spellcheck: false;
+  background: #fff;
+}
+textarea:disabled {
+  background: #eee;
+}
+.div-textarea {
+  resize: none;
+  background: #eee;
+  white-space: pre;
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+  white-space: pre;
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+  white-space: pre;
+  font-family: monospace;
+}
+
+
+#stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+#scene-zone {
+  border: 1px dashed #000;
+  position: relative;
+}
+
+#text-zone {
+  height: 150px;
+  width: 100%;
+}
+
+#script-zone {
+
+}
+
+#script-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#script-storage-src {
+  height: 100px;
+  flex: unset;
+}
+
+#script-errors {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  color: #a00;
+  font-weight: bold;
+}
+
+#script-src {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-height: 400px;
+}

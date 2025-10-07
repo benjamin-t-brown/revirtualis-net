@@ -9,7 +9,7 @@ import { globalIgnores } from 'eslint/config';
 export default tseslint.config([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx,js,jsx.html}'],
     plugins: {
       'unused-imports': unusedImports,
     },
@@ -25,6 +25,7 @@ export default tseslint.config([
     },
     rules: {
       'no-var': 1,
+      'no-undefined': 0,
       'unused-imports/no-unused-imports': 1,
       'unused-imports/no-unused-vars': [
         'warn',

@@ -32,11 +32,22 @@ p {
   font-size: var(--font-size-p);
 }
 
+li {
+  color: var(--color-card-text);
+}
+pre {
+  padding: var(--spacing-size-1);
+}
+
 h1 {
   font-family: 'DataLatin';
   font-size: var(--font-size-h1);
   color: var(--color-h2-text);
-  background: linear-gradient(90deg, rgb(93 117 143 / 41%) 0%, rgba(0, 0, 0, 0) 99%);
+  background: linear-gradient(
+    90deg,
+    rgb(93 117 143 / 41%) 0%,
+    rgba(0, 0, 0, 0) 99%
+  );
   margin: var(--spacing-size-2);
   padding: var(--spacing-size-6) var(--spacing-size-2);
   position: relative;
@@ -49,7 +60,7 @@ h1::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("img/flower-trail.png");
+  background-image: url('img/flower-trail.png');
   opacity: 0.3;
   z-index: -1;
   pointer-events: none;
@@ -125,12 +136,19 @@ pre code {
   font-size: 0.8rem;
 }
 
+figure {
+  background: rgba(0, 0, 0, 0.2);
+}
+figcaption {
+  text-align: center;
+  color: var(--color-card-text);
+}
+
 .hidden {
   filter: blur(4px);
 }
 
 .side-bar-container {
-    
 }
 
 .side-bar {
@@ -216,7 +234,11 @@ pre code {
   align-items: center;
   cursor: pointer;
   /* pointer-events: none; */
-  background: linear-gradient(0deg,rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0) 25%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.76) 0%,
+    rgba(0, 0, 0, 0) 25%
+  );
 }
 
 .post-overlay span {
@@ -294,7 +316,7 @@ pre code {
 
 .theme-toggle-icon {
   color: var(--color-header-text);
-  font-size: 1.0em;
+  font-size: 1em;
   transform: translateY(-2px);
 }
 
@@ -304,7 +326,10 @@ pre code {
 }
 
 * {
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .top-bar-logo-container {
@@ -323,7 +348,6 @@ pre code {
 
 .top-bar-menu-container {
   display: none;
-
 }
 .top-bar-menu-container button {
   color: var(--color-header-text);
@@ -350,7 +374,7 @@ pre code {
 
 .game-post {
   margin: var(--spacing-size-5) 0;
-  max-width:400px;
+  max-width: 400px;
   flex-grow: 1;
   display: flex;
   gap: var(--spacing-size-4);
@@ -442,7 +466,7 @@ pre code {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .pagination span {
     min-width: auto;
     order: -1;
@@ -474,6 +498,23 @@ pre code {
   margin: var(--spacing-size-4) auto;
   width: auto;
   height: auto;
+}
+
+.blog-iframe {
+  width: 100%;
+  display: block;
+  margin: var(--spacing-size-4) auto;
+  height: auto;
+  border: 8px outset var(--color-border2);
+  box-sizing: border-box;
+}
+
+.code-iframe {
+  width: 100%;
+  display: block;
+  height: auto;
+  border: 2px dotted var(--color-border1);
+  box-sizing: border-box;
 }
 
 @media (max-width: 800px) {
@@ -513,7 +554,8 @@ pre code {
     width: 100%;
     margin-left: 0;
   }
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
   }
   .side-bar {

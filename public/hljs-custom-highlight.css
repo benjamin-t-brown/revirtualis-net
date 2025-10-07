@@ -1,0 +1,46 @@
+/* Custom highlight.js punctuation colors */
+.hljs-punctuation {
+  color: #ff6b6b !important; /* Red punctuation */
+}
+
+/* Alternative: More specific punctuation targeting */
+.hljs .hljs-punctuation {
+  color: #a46109 !important; /* Teal punctuation */
+}
+
+/* RPGScript specific punctuation styling */
+.hljs-rpgscript .hljs-punctuation {
+  color: #ff9f43 !important; /* Orange punctuation for RPGScript */
+}
+
+.hljs-keyword {
+  color: #ff5656 !important; /* Orange punctuation for RPGScript */
+}
+
+.hljs-string {
+  color: #177e80 !important; /* Blue for Python */
+}
+
+.hljs-number {
+  color: #9b59b6 !important; /* Purple for brackets/braces */
+}
+
+/* More specific punctuation targeting for different languages */
+.hljs-javascript .hljs-punctuation,
+.hljs-typescript .hljs-punctuation {
+  color: #e74c3c !important; /* Red for JS/TS */
+}
+
+.hljs-python .hljs-punctuation {
+  color: #3498db !important; /* Blue for Python */
+}
+
+/* Different punctuation types */
+.hljs-bracket,
+.hljs-brace {
+  color: #9b59b6 !important; /* Purple for brackets/braces */
+}
+
+.hljs-operator {
+  color: #f39c12 !important; /* Orange for operators */
+}

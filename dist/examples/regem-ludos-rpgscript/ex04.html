@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+    />
+    <link rel="stylesheet" href="./ex04.css" />
+  </head>
+  <body>
+    <div id="stage">
+      <div id="scene-zone"></div>
+      <div id="text-zone"></div>
+    </div>
+    <div id="script-zone">
+      <p>
+        <button id="script-input-restart">Reload Script</button>
+        <button id="script-input-stop">Stop Script</button>
+      </p>
+      <div id="script-inputs">
+        <label for="script-input-dimensions-x">Scene Width PX</label>
+        <input
+          id="script-input-dimensions-x"
+          type="number"
+          placeholder="Width"
+        />
+        <label for="script-input-dimensions-y">Scene Height PX</label>
+        <input
+          id="script-input-dimensions-y"
+          type="number"
+          placeholder="Height"
+        />
+        <label for="script-storage-src">Scene Storage</label>
+        <textarea spellcheck="false" id="script-storage-src"></textarea>
+        <label for="script-input-line-number">Line Number</label>
+        <input
+          id="script-input-line-number"
+          type="number"
+          disabled
+          placeholder="0"
+        />
+      </div>
+      <div id="script-errors"></div>
+      <div id="script-src">
+        <textarea spellcheck="false" id="script-input"></textarea>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script type="module">
+      import { main } from './ex04.js';
+      window.addEventListener('load', main);
+    </script>
+  </footer>
+</html>

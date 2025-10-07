@@ -7,12 +7,12 @@ export const createBlogPost = (
     showTitle?: boolean;
     showOverlay?: boolean;
     isPreview?: boolean;
+    scriptContents?: string[];
   }
 ) => {
   const tags = post.tags.map(
     (tag) => `<a href='/blog-tags/${tag}' class='post-tag'>${tag}</a>`
   );
-
   return /*html*/ `
 <section class='card post' style="position: relative; ${args.showOverlay ? 'overflow: hidden; max-height: 300px;' : ''}">
   ${args.showTitle ? `<h3><a href='/blog-posts/${post.id}.html' class='post-link ${args.isPreview ? 'post-link-preview' : ''}'>${post.title}</a></h3>` : ''}

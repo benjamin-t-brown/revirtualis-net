@@ -12,6 +12,7 @@ export const createRoute = (
   const template = getDefaultTemplate();
   const firstPost = posts[0];
   return template
+    .replace('<footer>{SCRIPTS}</footer>', '')
     .replace(
       '{BODY}',
       createLayout(

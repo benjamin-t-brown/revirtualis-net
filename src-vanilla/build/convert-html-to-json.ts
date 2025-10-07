@@ -14,6 +14,7 @@ export interface PostMetadata {
   id?: string;
   overrideCreateDate?: string;
   overrideUpdateDate?: string;
+  scripts?: string[];
 }
 
 export const convertToJson = async (filePath: string) => {
@@ -21,7 +22,12 @@ export const convertToJson = async (filePath: string) => {
   const fileName = path.basename(filePath);
   const { metadata, content: postContent } = parseFrontMatter(html);
 
-  const postId = metadata.id ?? randomUUID() + '-' + fileName.slice(0, 10);
+  let postId = metadata.id ?? randomUUID() + '-' + fileName.slice(0, 20);
+  // If postId ends in a non-digit or letter, remove it
+  if (/[^a-zA-Z0-9]$/.test(postId)) {
+    postId = postId.slice(0, -1);
+  }
+  // Use cleanPostId for further processing
   if (!metadata.id) {
     const updatedHtml = html.replace('---\n', `---\nid: ${postId}\n`);
     console.log(`updating ${filePath} with id ${postId}`);
@@ -29,7 +35,7 @@ export const convertToJson = async (filePath: string) => {
   }
 
   const post: BlogPostData = {
-    id: metadata.id ?? randomUUID() + '-' + fileName.slice(0, 10),
+    id: metadata.id ?? postId,
     title: metadata.title || 'Untitled',
     author: metadata.author,
     content: postContent,
@@ -38,6 +44,7 @@ export const convertToJson = async (filePath: string) => {
     published: metadata.published !== false,
     createdAt: metadata.overrideCreateDate || metadata.createdAt,
     updatedAt: metadata.overrideUpdateDate || metadata.updatedAt,
+    scripts: metadata.scripts || [],
   };
 
   // console.log('Parsed post', post.id, post.createdAt, metadata);
@@ -63,6 +70,7 @@ function parseFrontMatter(content: string): {
     published: false,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
+    scripts: [],
   };
   const lines = metadataText.split('\n');
 

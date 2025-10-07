@@ -1,0 +1,123 @@
+// puppets are positioned relative to their top left corner.
+//
+// You can add any puppet from game-icons.net.
+// To add a puppet, find your icon on that site and use the addPuppet command
+// with the end of the url to that icon as an "svg"
+// The "person" svg is added with this link:
+// https://game-icons.net/1x1/delapouite/person.html
+// where you only need the author and the name of the icon, and html is replaced by svg
+@setup
+  +addPuppet(chloe, 'delapouite/person.svg', {SCENE_WIDTH} / 2 - 40 - 64 / 2, {SCENE_HEIGHT} - 64, 64, 64, '#cc3ed4')
+  +addPuppet(liam, 'delapouite/person.svg', {SCENE_WIDTH} / 2 + 40 - 64 / 2, {SCENE_HEIGHT} - 64, 64, 64, '#3d50b9')
+  +addPuppet(pencil, 'delapouite/pencil.svg', {SCENE_WIDTH} / 2 + 20 - 16 / 2, {SCENE_HEIGHT} - 16, 16, 16, '#000000')
+
+@shakeWithPencil
+  +shakePuppet(pencil, 150, true)
+  +shakePuppet([ARG0], 150)
+
+@wiggleWithPencil
+  +setStorage(localMsHalf, [ARG1] / 2)
+  +setStorage(localMsQuarter, [ARG1] / 4)
+  +movePuppet(pencil, 2, 0, linear, {localMsQuarter}, true)
+  +movePuppet([ARG0], 2, 0, linear, {localMsQuarter})
+  +movePuppet(pencil, -4, 0, linear, {localMsHalf}, true)
+  +movePuppet([ARG0], -4, 0, linear, {localMsHalf})
+  +movePuppet(pencil, 2, 0, linear, {localMsQuarter}, true)
+  +movePuppet([ARG0], 2, 0, linear, {localMsQuarter})
+
+@cutsceneWithoutPencil
+  +shakePuppet(chloe)
+  Chloe: "I wish I had a pencil right now..."
+  +movePuppet(pencil, -15, 0, ease-out, 750)
+  +waitMs(500)
+  +movePuppet(chloe, 5, 0)
+  Chloe: "Huh, what's that?"
+  +movePuppet(liam, -5, 0)
+  Liam: "Oops. That's probably mine. Happens a lot. My desk is basically a basket of stationery."
+  +shakePuppet(chloe)
+  Chloe: "No worries."
+  +movePuppet(liam, -10, 0)
+  +movePuppet(pencil, 0, -25)
+  Liam: "Want it? Here you go."
+  +movePuppet(liam, -10, 0, linear, 200, true)
+  +movePuppet(pencil, -15, 0, linear, 200, true)
+  +movePuppet(chloe, 10, 0, linear, 200)
+  +waitMs(200)
+  +movePuppet(liam, 10, 0)
+  +:shakeWithPencil(chloe)
+  Chloe: "Thanks."
+  +movePuppet(liam, 10, 0)
+  +shakePuppet(liam)
+  Liam: "Anyway, I guess I'll see you around."
+  +:shakeWithPencil(chloe)
+  Chloe: "Right."
+  +movePuppet(chloe, -5, 0, linear, 200, true)
+  +movePuppet(pencil, -10, 0)
+  +fadeOut(500)
+
+@cutsceneWithPencil
+  +movePuppet(pencil, -45, -20, linear, 0)
+  Narrator: "The next day..."
+  +:shakeWithPencil(chloe)
+  Chloe: "Oh... I still have this pencil.  I should give it back."
+  +movePuppet(pencil, 41, 0, ease-out, 700, true)
+  +movePuppet(Chloe, 41, 0, ease-out, 700)
+  +:shakeWithPencil(chloe)
+  Chloe: "Excuse me..."
+  Chloe: "I think this is yours."
+  +movePuppet(liam, -2, 0, linear, 200, true)
+  +movePuppet(pencil, 10, 0, linear, 200, true)
+  +movePuppet(chloe, 10, 0, linear, 200)
+  +waitMs(200)
+  +movePuppet(chloe, -10, 0)
+  +shakePuppet(chloe)
+  Chloe: "Sorry, I must have slipped it into my bag without looking."
+  +:shakeWithPencil(liam)
+  Liam: "YOU FOOLISH GIRL."
+  +:shakeWithPencil(liam)
+  Liam: "YOU HAVE MADE A TERRIBLE MISTAKE!"
+  +movePuppet(Chloe, -5, 0, ease-out, 100)
+  +shakePuppet(Chloe)
+  Chloe: "Excuse me?"
+  +:shakeWithPencil(liam)
+  Liam: "THIS PENCIL UNLOCKS MY TRUE FORM."
+  +loop(wiggleWithPencil, 5, liam, 50)
+  +movePuppet(Chloe, -10, 0, linear, 100, true)
+  Chloe: "Hey!"
+  +loop(wiggleWithPencil, 5, liam, 50)
+  Liam: "<i>-- Get out of here!  I can't hold it back any longer! --</i>"
+  +movePuppet(Chloe, -10, 0, linear, 100, true)
+  +loop(wiggleWithPencil, 5, liam, 100)
+  +loop(wiggleWithPencil, 5, liam, 75)
+  +movePuppet(Chloe, -5, 0, linear, 100, true)
+  +loop(wiggleWithPencil, 8, liam, 50)
+  +loop(wiggleWithPencil, 10, liam, 25)
+  +removePuppet(liam)
+  +addPuppet(liam, 'delapouite/vampire-cape.svg', {SCENE_WIDTH} / 2 + 40 - 64 / 2, {SCENE_HEIGHT} - 64, 64, 64, '#3d50b9')
+  +waitMs(10)
+  +loop(wiggleWithPencil, 10, liam, 25)
+  +loop(wiggleWithPencil, 8, liam, 50)
+  +loop(wiggleWithPencil, 5, liam, 75)
+  +loop(wiggleWithPencil, 5, liam, 100)
+  +loop(wiggleWithPencil, 2, liam, 300)
+  +waitMs(500)
+  Liam: "HA HA HA HA HA HA!"
+  Liam: "Do you now see what I truly am!"
+  +movePuppet(Chloe, -10, 0, linear, 100, true)
+  Chloe: "Ahhhhhh!"
+  +movePuppet(Chloe, -180, 0, linear, 300, true)
+  +waitMs(150)
+  +removePuppet(Chloe)
+  +waitMs(500)
+  +:shakeWithPencil(Liam)
+  Liam: "Remember to PROMPTLY return pencils when they're loaned to you!"
+  +fadeOut(1000)
+
+@main
+  +?is(chloeHasPencil):{
+    +:cutsceneWithPencil()
+  }
+  +?isnot(chloeHasPencil):{
+    +:cutsceneWithoutPencil()
+    +setStorage(chloeHasPencil, true)
+  }

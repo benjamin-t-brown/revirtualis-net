@@ -7,6 +7,7 @@ import { BlogPostData } from '../types';
 export const createRoute = (posts: BlogPostData[]) => {
   const template = getDefaultTemplate();
   return template
+    .replace('<footer>{SCRIPTS}</footer>', '')
     .replace(
       '{BODY}',
       createLayout(createBlogPage(posts), createSidebar('blog'))

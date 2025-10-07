@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+    />
+    <style>
+      body {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      id="chloe"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      style="height: 64px; width: 64px"
+    >
+      <g class="" transform="translate(0,0)">
+        <path
+          d="M250.882 22.802c-23.366 3.035-44.553 30.444-44.553 65.935 0 19.558 6.771 36.856 16.695 48.815l11.84 14.263-18.217 3.424c-12.9 2.425-22.358 9.24-30.443 20.336-8.085 11.097-14.266 26.558-18.598 44.375-7.843 32.28-9.568 71.693-9.842 106.436h42.868l11.771 157.836c29.894 6.748 61.811 6.51 90.602.025l10.414-157.86h40.816c-.027-35.169-.477-75.126-7.584-107.65-3.918-17.934-9.858-33.372-18.04-44.343-8.185-10.97-18.08-17.745-32.563-19.989l-18.592-2.88 11.736-14.704c9.495-11.897 15.932-28.997 15.932-48.082 0-37.838-23.655-65.844-49.399-65.844z"
+          fill="#cc3ed4"
+          fill-opacity="1"
+        ></path>
+      </g>
+    </svg>
+    <svg
+      id="liam"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      style="height: 64px; width: 64px"
+    >
+      <g class="" transform="translate(0,0)">
+        <path
+          d="M250.882 22.802c-23.366 3.035-44.553 30.444-44.553 65.935 0 19.558 6.771 36.856 16.695 48.815l11.84 14.263-18.217 3.424c-12.9 2.425-22.358 9.24-30.443 20.336-8.085 11.097-14.266 26.558-18.598 44.375-7.843 32.28-9.568 71.693-9.842 106.436h42.868l11.771 157.836c29.894 6.748 61.811 6.51 90.602.025l10.414-157.86h40.816c-.027-35.169-.477-75.126-7.584-107.65-3.918-17.934-9.858-33.372-18.04-44.343-8.185-10.97-18.08-17.745-32.563-19.989l-18.592-2.88 11.736-14.704c9.495-11.897 15.932-28.997 15.932-48.082 0-37.838-23.655-65.844-49.399-65.844z"
+          fill="#3d50b9"
+          fill-opacity="1"
+        ></path>
+      </g>
+    </svg>
+  </body>
+  <footer>
+    <script type="module">
+      let lineIndex = 0;
+      const lines = [
+        {
+          text: 'Chloe: "I wish I had a pencil right now..."',
+          cmd: () => shakePuppet('chloe'),
+        },
+        {
+          text: 'Chloe: "Huh, what\'s that?"',
+          cmd: () => movePuppet('chloe', 2, 0),
+        },
+        {
+          text: 'Liam: "Oops. That\'s probably mine. Happens a lot. My desk is basically a basket of stationery."',
+          cmd: () => movePuppet('liam', -10, 0),
+        },
+        { text: 'Chloe: "No worries."', cmd: () => shakePuppet('chloe') },
+        {
+          text: 'Liam: "Want it? Here you go."',
+          cmd: () => movePuppet('liam', -10, 0),
+        },
+        { text: 'Chloe: "Thanks."', cmd: () => movePuppet('chloe', 5, 0) },
+        {
+          text: 'Liam: "Anyway, I guess I\'ll see you around."',
+          cmd: () => movePuppet('liam', 15, 0),
+        },
+        { text: 'Chloe: "Right."', cmd: () => shakePuppet('chloe') },
+      ];
+
+      const ATTRIBUTE_X_LOCATION = 'x-location';
+      const ATTRIBUTE_Y_LOCATION = 'y-location';
+
+      const CLICK_TO_CONTINUE_ID = 'click-to-continue';
+      const LINE_ID = 'line';
+      const RESTART_BUTTON_ID = 'restart-button';
+
+      const getNumericAttribute = (svg, attribute) => {
+        const value = svg.getAttribute(attribute);
+        return value !== null ? parseInt(value) : 0;
+      };
+
+      const renderLine = (line) => {
+        const id = LINE_ID;
+        const p = document.createElement('p');
+        p.id = id;
+        p.innerHTML = line;
+
+        const existingP = document.getElementById(id);
+        if (existingP) {
+          existingP.remove();
+        }
+
+        document.body.appendChild(p);
+      };
+
+      const renderClickToContinue = (overrideText) => {
+        const id = CLICK_TO_CONTINUE_ID;
+        const button = document.createElement('button');
+        button.innerHTML = overrideText ?? 'Click to continue.';
+        button.id = id;
+        button.addEventListener('click', () => {
+          advanceLine();
+        });
+
+        const existingButton = document.getElementById(id);
+        if (existingButton) {
+          existingButton.remove();
+        }
+
+        document.body.appendChild(button);
+      };
+
+      const renderRestartButton = () => {
+        const button = document.createElement('button');
+        button.innerHTML = 'Restart';
+        button.id = RESTART_BUTTON_ID;
+        button.addEventListener('click', () => {
+          window.location.reload();
+        });
+        document.body.appendChild(button);
+      };
+
+      const advanceLine = () => {
+        const nextLine = lines[lineIndex];
+        if (nextLine) {
+          if (nextLine.cmd) {
+            nextLine.cmd();
+          }
+          renderLine(nextLine.text ?? '');
+          renderClickToContinue();
+          lineIndex++;
+        } else {
+          document.getElementById(LINE_ID).remove();
+          document.getElementById(CLICK_TO_CONTINUE_ID).remove();
+          renderRestartButton();
+        }
+      };
+
+      // begin puppet functions
+
+      const shakePuppet = (puppetName) => {
+        const duration = 75;
+        const svg = document.getElementById(puppetName);
+        const puppetX = getNumericAttribute(svg, ATTRIBUTE_X_LOCATION);
+        const puppetY = getNumericAttribute(svg, ATTRIBUTE_Y_LOCATION);
+
+        const nextX = puppetX;
+        const nextY = puppetY - 5;
+
+        svg.style.transform = `translate(${nextX}px, ${nextY}px)`;
+        svg.style.transition = `transform ${duration}ms linear`;
+
+        setTimeout(() => {
+          svg.style.transform = `translate(${puppetX}px, ${puppetY}px)`;
+        }, duration);
+      };
+
+      const movePuppet = (puppetName, x, y) => {
+        const duration = 75;
+        const svg = document.getElementById(puppetName);
+        const puppetX = getNumericAttribute(svg, ATTRIBUTE_X_LOCATION);
+        const puppetY = getNumericAttribute(svg, ATTRIBUTE_Y_LOCATION);
+
+        const nextX = puppetX + x;
+        const nextY = puppetY + y;
+
+        svg.style.transition = `transform ${duration}ms linear`;
+        svg.style.transform = `translate(${nextX}px, ${nextY}px)`;
+
+        svg.setAttribute(ATTRIBUTE_X_LOCATION, nextX);
+        svg.setAttribute(ATTRIBUTE_Y_LOCATION, nextY);
+      };
+
+      const main = () => {
+        renderClickToContinue('Click to start cutscene.');
+      };
+
+      window.addEventListener('load', main);
+    </script>
+  </footer>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta
@@ -15,7 +15,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
     />
     <link rel="icon" href="/favicon.ico" />
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="940d7100-b029-45dd-b75e-af9590f3b486"></script>
     <script src="/scripts/theme.js"></script>
     <script src="/scripts/image-carousel-events.js"></script>
     <script src="/scripts/side-bar.js"></script>
@@ -150,7 +149,8 @@ document.body.appendChild(button);
   <ul>
   <li>Event capturing requires mouse cursor location and collision detection.</li>
   <li>How is the button composed of primitives?  How many rectangles, what text format?</li>
-  <li>How is the button composed of primitives?  How many rectangles, what color are they, what text format?</li>
+  <li>How is this button layed out like other buttons, and is it allowed to overlap?</li>
+  <li>Does it have things like border, padding, or margin?</li>
   </ul>
   Putting those questions together, we might come up with a class like this:
 </p>
@@ -479,7 +479,7 @@ class MyObject {
       A more minifiable-friendly version would be this, since the function names can be mangled for free:
 <pre><code class="language-typescript">
 const createMyObject = () => {
-  return someVariable; 
+  return { someVariable: 'my variable' }; 
 }
 const myObjectSetSomeVariable(obj, a) => {
   obj.someVariable = a;
@@ -501,6 +501,16 @@ const myObjectSetSomeVariable(obj, a) => {
   </main>
 </div>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script src="/scripts/highlight.js"></script>
+  
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="/hljs-custom-highlight.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="/scripts/highlight.js"></script>
+
 </html>

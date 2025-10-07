@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+    />
+    <style>
+      body {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body></body>
+  <footer>
+    <script type="module">
+      let lineIndex = 0;
+      const lines = [
+        `Chloe: "I wish I had a pencil right now..."`,
+        `Chloe: "Huh, what's that?"`,
+        `Liam: "Oops. That's probably mine. Happens a lot. My desk is basically a basket of stationery."`,
+        `Chloe: "No worries."`,
+        `Liam: "Want it? Here you go."`,
+        `Chloe: "Thanks."`,
+        `Liam: "Anyway, I guess I'll see you around."`,
+        `Chloe: "Right."`,
+      ];
+
+      const CLICK_TO_CONTINUE_ID = 'click-to-continue';
+      const LINE_ID = 'line';
+      const RESTART_BUTTON_ID = 'restart-button';
+
+      const renderLine = (line) => {
+        const id = LINE_ID;
+        const p = document.createElement('p');
+        p.id = id;
+        p.innerHTML = line;
+
+        const existingP = document.getElementById(id);
+        if (existingP) {
+          existingP.remove();
+        }
+
+        document.body.appendChild(p);
+      };
+
+      const renderClickToContinue = (overrideText) => {
+        const id = CLICK_TO_CONTINUE_ID;
+        const button = document.createElement('button');
+        button.innerHTML = overrideText ?? 'Click to continue.';
+        button.id = id;
+        button.addEventListener('click', () => {
+          advanceLine();
+        });
+
+        const existingButton = document.getElementById(id);
+        if (existingButton) {
+          existingButton.remove();
+        }
+
+        document.body.appendChild(button);
+      };
+
+      const renderRestartButton = () => {
+        const button = document.createElement('button');
+        button.innerHTML = 'Restart';
+        button.id = RESTART_BUTTON_ID;
+        button.addEventListener('click', () => {
+          window.location.reload();
+        });
+        document.body.appendChild(button);
+      };
+
+      const advanceLine = () => {
+        const nextLine = lines[lineIndex];
+        if (nextLine) {
+          renderLine(nextLine);
+          renderClickToContinue();
+          lineIndex++;
+        } else {
+          document.getElementById(LINE_ID).remove();
+          document.getElementById(CLICK_TO_CONTINUE_ID).remove();
+          renderRestartButton();
+        }
+      };
+
+      const main = () => {
+        renderClickToContinue('Click to start cutscene.');
+      };
+
+      window.addEventListener('load', main);
+    </script>
+  </footer>
+</html>

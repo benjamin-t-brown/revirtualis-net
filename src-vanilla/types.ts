@@ -8,6 +8,7 @@ export interface BlogPostData {
   excerpt: string;
   published: boolean;
   createdAt: string;
+  scripts: string[];
 }
 
 export interface BlogPostListItemData {
@@ -19,6 +20,7 @@ export interface BlogPostListItemData {
   excerpt: string;
   published: boolean;
   createdAt: string;
+  scripts: string[];
 }
 
 export interface BlogPostListData {

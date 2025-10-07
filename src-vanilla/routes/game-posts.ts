@@ -8,6 +8,7 @@ import { BlogPostData, GamePostData } from '../types';
 export const createRoute = (game: GamePostData, posts: BlogPostData[]) => {
   const template = getDefaultTemplate();
   return template
+    .replace('<footer>{SCRIPTS}</footer>', '')
     .replace(
       '{BODY}',
       createLayout(createGamePostPage(game, posts), createSidebar('home'))

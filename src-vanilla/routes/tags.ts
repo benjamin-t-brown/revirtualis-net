@@ -11,6 +11,7 @@ export const createRoute = (posts: BlogPostData[]) => {
   //   post.tags.some((tag) => uniqueTags.includes(tag))
   // );
   return template
+    .replace('<footer>{SCRIPTS}</footer>', '')
     .replace(
       '{BODY}',
       createLayout(createTagsPage(uniqueTags), createSidebar('tags'))

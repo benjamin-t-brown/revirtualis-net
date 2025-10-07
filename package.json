@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "start": "(cd dist && http-server)",
     "build:vanilla": "npx tsx src-vanilla/build/build-vanilla.ts"
   },
   "dependencies": {},

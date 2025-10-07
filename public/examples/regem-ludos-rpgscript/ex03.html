@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+    />
+    <style>
+      body {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      id="chloe"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      style="height: 64px; width: 64px"
+    >
+      <g class="" transform="translate(0,0)">
+        <path
+          d="M250.882 22.802c-23.366 3.035-44.553 30.444-44.553 65.935 0 19.558 6.771 36.856 16.695 48.815l11.84 14.263-18.217 3.424c-12.9 2.425-22.358 9.24-30.443 20.336-8.085 11.097-14.266 26.558-18.598 44.375-7.843 32.28-9.568 71.693-9.842 106.436h42.868l11.771 157.836c29.894 6.748 61.811 6.51 90.602.025l10.414-157.86h40.816c-.027-35.169-.477-75.126-7.584-107.65-3.918-17.934-9.858-33.372-18.04-44.343-8.185-10.97-18.08-17.745-32.563-19.989l-18.592-2.88 11.736-14.704c9.495-11.897 15.932-28.997 15.932-48.082 0-37.838-23.655-65.844-49.399-65.844z"
+          fill="#cc3ed4"
+          fill-opacity="1"
+        ></path>
+      </g>
+    </svg>
+    <svg
+      id="pencil"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      style="height: 16px; width: 16px"
+    >
+      <g class="" transform="translate(0,0)">
+        <path
+          d="M429.548 30.836c-.307-.003-.6.005-.875.024-2.212.147-3.34.653-4.576 1.89l-27.58 27.58 55.156 55.154 27.578-27.58c1.238-1.236 1.744-2.363 1.89-4.575.15-2.21-.37-5.433-1.805-9.163-2.87-7.46-9.277-16.667-17.055-24.445-7.778-7.778-16.985-14.185-24.445-17.055-3.264-1.255-6.138-1.81-8.287-1.83zm-45.758 42.22-9.9 9.9 9.9 9.9 12.727 12.727 9.9 9.9 12.727 12.728 9.9 9.9 9.9-9.9-55.155-55.155zm-22.627 22.626L72.665 384.186l9.898 9.897 288.5-288.5-9.9-9.9zm22.627 22.63L95.29 406.808l9.9 9.902 288.5-288.5-9.9-9.9zm22.63 22.626-288.502 288.5 9.897 9.9 288.503-288.5-9.9-9.9zM63.223 400.198l-12.12 30.306 30.393 30.394 30.305-12.12-6.61-6.612L92.46 429.44l-9.9-9.9-12.73-12.728-6.61-6.612zm-19.395 48.488-12.993 32.478 32.478-12.992-19.486-19.485z"
+          fill="#000"
+          fill-opacity="1"
+        ></path>
+      </g>
+    </svg>
+    <svg
+      id="liam"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      style="height: 64px; width: 64px"
+    >
+      <g class="" transform="translate(0,0)">
+        <path
+          d="M250.882 22.802c-23.366 3.035-44.553 30.444-44.553 65.935 0 19.558 6.771 36.856 16.695 48.815l11.84 14.263-18.217 3.424c-12.9 2.425-22.358 9.24-30.443 20.336-8.085 11.097-14.266 26.558-18.598 44.375-7.843 32.28-9.568 71.693-9.842 106.436h42.868l11.771 157.836c29.894 6.748 61.811 6.51 90.602.025l10.414-157.86h40.816c-.027-35.169-.477-75.126-7.584-107.65-3.918-17.934-9.858-33.372-18.04-44.343-8.185-10.97-18.08-17.745-32.563-19.989l-18.592-2.88 11.736-14.704c9.495-11.897 15.932-28.997 15.932-48.082 0-37.838-23.655-65.844-49.399-65.844z"
+          fill="#3d50b9"
+          fill-opacity="1"
+        ></path>
+      </g>
+    </svg>
+  </body>
+  <footer>
+    <script type="module">
+      const lines = [
+        {
+          cmd: 'shakePuppet',
+          args: ['chloe'],
+        },
+        {
+          cmd: 'playDialogue',
+          args: ['Chloe: "I wish I had a pencil right now..."'],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['pencil', -15, 0, 'ease-out', 750],
+        },
+        {
+          cmd: 'waitMs',
+          args: [500],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['chloe', 5, 0],
+        },
+        {
+          cmd: 'playDialogue',
+          args: ['Chloe: "Huh, what\'s that?"'],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['liam', -5, 0],
+        },
+        {
+          cmd: 'playDialogue',
+          args: [
+            'Liam: "Oops. That\'s probably mine. Happens a lot. My desk is basically a basket of stationery."',
+          ],
+        },
+        {
+          cmd: 'shakePuppet',
+          args: ['chloe'],
+        },
+        { cmd: 'playDialogue', args: ['Chloe: "No worries."'] },
+        {
+          cmd: 'movePuppet',
+          args: ['liam', -10, 0],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['pencil', 0, -25],
+        },
+        {
+          cmd: 'playDialogue',
+          args: ['Liam: "Want it? Here you go."'],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['liam', -10, 0, 'linear', 200, true],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['pencil', -15, 0, 'linear', 200, true],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['chloe', 10, 0, 'linear', 200],
+        },
+        {
+          cmd: 'waitMs',
+          args: [200],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['liam', 10, 0],
+        },
+        {
+          cmd: 'shakePuppet',
+          args: ['chloe'],
+        },
+        { cmd: 'playDialogue', args: ['Chloe: "Thanks."'] },
+        {
+          cmd: 'movePuppet',
+          args: ['liam', 10, 0],
+        },
+        {
+          cmd: 'shakePuppet',
+          args: ['liam'],
+        },        
+        {
+          cmd: 'playDialogue',
+          args: ['Liam: "Anyway, I guess I\'ll see you around."'],
+        },
+        {
+          cmd: 'shakePuppet',
+          args: ['chloe'],
+        },  
+        { cmd: 'playDialogue', args: ['Chloe: "Right."'] },
+        {
+          cmd: 'movePuppet',
+          args: ['chloe', -5, 0, 'linear', 200, true],
+        },
+        {
+          cmd: 'movePuppet',
+          args: ['pencil', -10, 0],
+        },
+      ];
+      const timers = [];
+
+      const ATTRIBUTE_X_LOCATION = 'x-location';
+      const ATTRIBUTE_Y_LOCATION = 'y-location';
+
+      const CLICK_TO_CONTINUE_ID = 'click-to-continue';
+      const LINE_ID = 'line';
+      const RESTART_BUTTON_ID = 'restart-button';
+
+      const getNumericAttribute = (svg, attribute) => {
+        const value = svg.getAttribute(attribute);
+        return value !== null && value !== undefined ? parseInt(value) : 0;
+      };
+
+      // recursive for now, for the sake of example
+      const sceneAdvance = () => {
+        const command = lines[0];
+        if (command) {
+          lines.shift();
+          const func = puppetCommands[command.cmd];
+          if (!func) {
+            throw new Error(`Unknown scene command: ${command.cmd}`);
+          }
+          const promise = func(...command.args);
+          if (promise) {
+            promise
+              .then(() => {
+                sceneAdvance();
+              })
+              .catch((error) => {
+                console.error('Error in scene advance promise:', error);
+              });
+          } else {
+            sceneAdvance();
+          }
+        } else {
+          clearLines();
+          renderRestartButton();
+        }
+      };
+
+      const renderLine = (line) => {
+        const id = LINE_ID;
+        const p = document.createElement('p');
+        p.id = id;
+        p.innerHTML = line;
+
+        const existingP = document.getElementById(id);
+        if (existingP) {
+          existingP.remove();
+        }
+
+        document.body.appendChild(p);
+      };
+
+      const renderClickToContinue = (overrideText, cb) => {
+        const id = CLICK_TO_CONTINUE_ID;
+        const button = document.createElement('button');
+        button.innerHTML = overrideText ?? 'Click to continue.';
+        button.id = id;
+        button.addEventListener('click', () => {
+          clearLines();
+          cb();
+        });
+
+        const existingButton = document.getElementById(id);
+        if (existingButton) {
+          existingButton.remove();
+        }
+
+        document.body.appendChild(button);
+      };
+
+      const renderRestartButton = () => {
+        const button = document.createElement('button');
+        button.innerHTML = 'Restart';
+        button.id = RESTART_BUTTON_ID;
+        button.addEventListener('click', () => {
+          window.location.reload();
+        });
+        document.body.appendChild(button);
+      };
+
+      const clearLines = () => {
+        const ids = [LINE_ID, CLICK_TO_CONTINUE_ID, RESTART_BUTTON_ID];
+        for (const id of ids) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.remove();
+          }
+        }
+      };
+
+      const addTimer = (duration, callback) => {
+        const timer = {
+          duration,
+          t: 0,
+          callback,
+        };
+        timers.push(timer);
+      };
+
+      const isTimerComplete = (timer) => {
+        return timer.t >= timer.duration;
+      };
+
+      const updateTimers = (deltaTime) => {
+        for (const timer of timers) {
+          timer.t += deltaTime;
+          if (isTimerComplete(timer)) {
+            timers.splice(timers.indexOf(timer), 1);
+            timer.callback();
+          }
+        }
+      };
+
+      // begin puppet functions
+
+      const playDialogue = (text) => {
+        renderLine(text);
+        return new Promise((resolve) => {
+          renderClickToContinue(undefined, resolve);
+        });
+      };
+
+      const waitMs = (ms) => {
+        return new Promise((resolve) => {
+          addTimer(ms, resolve);
+        });
+      };
+
+      const shakePuppet = (puppetName, ms = 150, skipWait = false) => {
+        const duration = ms;
+        const svg = document.getElementById(puppetName);
+        const puppetX = getNumericAttribute(svg, ATTRIBUTE_X_LOCATION);
+        const puppetY = getNumericAttribute(svg, ATTRIBUTE_Y_LOCATION);
+
+        const nextX = puppetX;
+        const nextY = puppetY - 5;
+
+        svg.style.transform = `translate(${nextX}px, ${nextY}px)`;
+        svg.style.transition = `transform ${duration / 2}ms linear`;
+
+        const cb1 = () => {
+          svg.style.transform = `translate(${puppetX}px, ${puppetY}px)`;
+        };
+
+        if (skipWait) {
+          addTimer(duration / 2, cb1);
+          return undefined;
+        } else {
+          return new Promise((resolve) => {
+            addTimer(duration / 2, cb1);
+            addTimer(duration, () => {
+              resolve();
+            });
+          });
+        }
+      };
+
+      const movePuppet = (
+        puppetName,
+        x,
+        y,
+        ease = 'linear',
+        ms = 75,
+        skipWait = false
+      ) => {
+        const duration = ms;
+        const svg = document.getElementById(puppetName);
+        const puppetX = getNumericAttribute(svg, ATTRIBUTE_X_LOCATION);
+        const puppetY = getNumericAttribute(svg, ATTRIBUTE_Y_LOCATION);
+
+        const nextX = puppetX + x;
+        const nextY = puppetY + y;
+
+        svg.style.transition = `transform ${duration}ms ${ease}`;
+        svg.style.transform = `translate(${nextX}px, ${nextY}px)`;
+
+        svg.setAttribute(ATTRIBUTE_X_LOCATION, nextX);
+        svg.setAttribute(ATTRIBUTE_Y_LOCATION, nextY);
+
+        if (skipWait) {
+          return undefined;
+        } else {
+          return new Promise((resolve) => {
+            addTimer(duration, resolve);
+          });
+        }
+      };
+
+      const puppetCommands = {
+        playDialogue,
+        waitMs,
+        shakePuppet,
+        movePuppet,
+      };
+
+      const setupScene = () => {
+        movePuppet('pencil', 25, 0);
+      };
+
+      const startLoop = () => {
+        let lastTime = performance.now();
+        const loop = () => {
+          const currentTime = performance.now();
+          const deltaTime = currentTime - lastTime;
+          lastTime = currentTime;
+
+          updateTimers(deltaTime);
+
+          window.requestAnimationFrame(loop);
+        };
+
+        window.requestAnimationFrame(loop);
+      };
+
+      const main = () => {
+        setupScene();
+        startLoop();
+        renderClickToContinue('Click to start cutscene.', () => {
+          sceneAdvance();
+        });
+      };
+
+      window.addEventListener('load', main);
+    </script>
+  </footer>
+</html>

@@ -6,6 +6,8 @@ author: Benjamin
 tags: [js13k]
 excerpt: A few tidbits about the development of Witch Potion for JS13K 2025
 createdAt: Tue Sep 16 2025 14:26:41 GMT-0600 (Mountain Daylight Time)
+updatedAt: Tue Sep 30 2025 14:00:41 GMT-0600 (Mountain Daylight Time)
+scripts: [highlightjs]
 ---
 
 <p>
@@ -64,7 +66,8 @@ document.body.appendChild(button);
   <ul>
   <li>Event capturing requires mouse cursor location and collision detection.</li>
   <li>How is the button composed of primitives?  How many rectangles, what text format?</li>
-  <li>How is the button composed of primitives?  How many rectangles, what color are they, what text format?</li>
+  <li>How is this button layed out like other buttons, and is it allowed to overlap?</li>
+  <li>Does it have things like border, padding, or margin?</li>
   </ul>
   Putting those questions together, we might come up with a class like this:
 </p>
@@ -393,7 +396,7 @@ class MyObject {
       A more minifiable-friendly version would be this, since the function names can be mangled for free:
 <pre><code class="language-typescript">
 const createMyObject = () => {
-  return someVariable; 
+  return { someVariable: 'my variable' }; 
 }
 const myObjectSetSomeVariable(obj, a) => {
   obj.someVariable = a;
