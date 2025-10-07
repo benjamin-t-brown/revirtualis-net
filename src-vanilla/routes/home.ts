@@ -27,7 +27,7 @@ const createHomeForeword = () => {
   return /*html*/ `
   <p>Welcome to Revirtualis, a small corner of the internet that features interesting projects, code-snippets, opinions, and games.  Make yourself at home.</p>
   <h4>Announcements</h4>
-  <p>The js13k entry for 2025 by Benjamin is now submitted!  Check it out <a href="https://js13kgames.com/2025/games/witch-potion">here</a>.<br>
+  <p>Benjamin's js13k entry for 2025 is submitted!  Check it out <a href="https://js13kgames.com/2025/games/witch-potion">here</a>.<br>
   <img class="blog-image" src="/img/post-data/witch-potion-icon.png" alt="screenshot"></img>
   </p>
   `;
