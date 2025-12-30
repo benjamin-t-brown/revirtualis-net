@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "(cd dist && http-server)",
-    "build:vanilla": "npx tsx src-vanilla/build/build-vanilla.ts"
+    "build": "npx tsx src-vanilla/build/build-vanilla.ts"
   },
   "dependencies": {},
   "devDependencies": {

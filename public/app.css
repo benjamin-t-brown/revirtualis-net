@@ -138,6 +138,7 @@ pre code {
 
 figure {
   background: rgba(0, 0, 0, 0.2);
+  padding: 8px;
 }
 figcaption {
   text-align: center;
@@ -498,6 +499,14 @@ figcaption {
   margin: var(--spacing-size-4) auto;
   width: auto;
   height: auto;
+  box-sizing: border-box;
+}
+
+.aside {
+  background: var(--color-bg4);
+  color: var( --color-text2);
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .blog-iframe {

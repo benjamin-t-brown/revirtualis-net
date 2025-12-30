@@ -1,0 +1,192 @@
+---
+id: 9eaff4dd-0fe2-44fe-9bca-e513a24012fa-12-startup-times
+published: true
+title: Video Game Startup Times: A Modern Catastrophe
+author: Benjamin
+tags: []
+excerpt: Video games nowadays take too long to start up.  Way too long.
+createdAt: 2025-12-29T12:00:00Z
+---
+<p>
+  <img class="blog-image" style="border: 2px solid white" src="/img/post-data/2025/startup-stopwatch.png" alt="screenshot"></img>
+</p>
+<p>
+  Go into Steam right now, double click any AAA game from the past few years, and silently count in your head how long it takes that game to boot into the menu.  And not even into a place where you can control; count until your screen renders "the game" instead a splash window, or even nothing at all.  Heck, count until it changes your mouse cursor to a loading cursor.  
+  
+  <br><br>If you're not on some absurdly expensive computer by today's standards, odds are it'll take long enough for you to get bored and lose count.  For me that's about 20 seconds.
+</p>
+<p>
+  I'm no stranger to a long boot time.  In late 2000s high school, my desktop was a cast-off Pentium 3, 512mb Windows XP computer which booted to "usable" in about 5 minutes.  My dad worked for the government, and would sometimes bring home old computers his department had discharged after upgrading.  My comp was one of these, and it ran who-knows-what government security software to keep it from being compromised in the future.  I couldn't wipe it, I didn't have money to buy Windows XP, and the factory reset was disabled.  I also didn't know how to get the damn thing not to launch all that software, having been not that tech literate at the time. Regardless, I used it to run <a href="https://store.steampowered.com/app/32370/STAR_WARS_Knights_of_the_Old_Republic/">KOTOR</a>.  I'd pop in the 1st of the 4 CDs it came on, wait for the <a href="https://learn.microsoft.com/en-us/previous-versions/windows/desktop/legacy/cc144202(v=vs.85)">cd autorun</a> to show up, click PLAY, then wait about 5 minutes to get to the menu (and endure the ~20 second loading screens between zones).  When I put my ear to the chassis I could hear the poor hard drive plinking its heart out, doing its best to pipe bits of data one-at-a-time into RAM.  I used to double click the icon for KOTOR on the desktop, then go to the kitchen and grab a handful of Costco white bread rolls and a glass of water, before coming back to see if it was ready yet.  I knew it was slow, but I also knew it was an old piece of crap.  I always dreamed of owning something better.
+</p>
+<figure>
+  <img
+    class="blog-image"
+    style="border: 2px solid white"
+    src="/img/post-data/2025/startup-kotor-blank.png"
+    alt="screenshot"
+  />
+  <figcaption>
+    KOTOR's resolution picker failing to recognize integrated graphics card output on an old computer.
+  </figcaption>
+</figure>
+<p>
+  Years later I've managed to equip myself with a more-than-adequate setup. It was honestly quite cathartic to be able to buy something that could boot Windows from an SSD in <i>seconds</i> rather than minutes. So now imagine my disappointment, that after I managed to acquire a proper computer, the games I want to play are STILL taking an egregious amount of time just to boot!  This has been bugging me more and more as of late.  There are a bunch of reasons for this unpleasant experience, and I want to take a look at them and decide whether or not they are justified.
+</p>
+<h4>Launcher Services</h4>
+<p>
+  Some games require other launchers to boot.  These would be stuff like Mass Effect Legendary Edition or Dead Space Remake requiring EA Play's launcher, Larian games requiring their own launcher for Baldur's Gate 3 or Divinity Original Sin games, Call of Duty requiring the Blizzard launcher, Halo games requiring the Microsoft store api, League of Legends requiring the Riot Games launcher, The Witcher requiring CD Project Red's launcher (that isn't GoG) etc.  When you start these games, the launchers for each fork their own processes in addition to the Steam processes, which add yet more latency to the startup of what should be a standalone application.
+</p>
+<p>
+  We don't need to get into all the details about WHY you'd make the crippling decision to do this, about the control that publishers use to show advertisements on your coveted screen space, and their inability to relinquish even a little bit of their data to an outside platform for convenience.  We can skim past the the superfluousness of the memory and cpu time these extra programs take up, and the anti-future-proofing your doing to your software by tying it to a service that's almost certainly going to change more often than your game.  We can even abridge the reasons of control and advertisement that publishers use these launchers to show on your coveted screen space.  Really, the thing that makes me the most angry is that it makes the boot time <b>a lot</b> longer.
+</p>
+<section class="aside">
+  League of Legends used to have a single launcher that would load a single login screen before getting you into the client for the game.
+  <figure>
+    <img
+      class="blog-image"
+      style="border: 2px solid white"
+      src="/img/post-data/2025/startup-lol-launcher0.png"
+      alt="screenshot"
+    />
+    <figcaption>
+      An old League of Legends login screen.
+    </figcaption>
+  </figure>
+  
+  Now we've got the login screen again...
+  <figure>
+    <img
+      class="blog-image"
+      style="border: 2px solid white"
+      src="/img/post-data/2025/startup-lol-launcher1.png"
+      alt="screenshot"
+    />
+    <figcaption>
+      A new League of Legends login screen.
+    </figcaption>
+  </figure>
+  And an extra step: the Riot launcher.
+  <figure>
+    <img
+      class="blog-image"
+      style="border: 2px solid white"
+      src="/img/post-data/2025/startup-lol-launcher2.png"
+      alt="screenshot"
+    />
+    <figcaption>
+      The Riot Games Launcher (a new addition).  Note the great potential for advertisements!
+    </figcaption>
+  </figure>
+
+  What does this culminate in?  Seconds if not MINUTES of extra startup time.
+</section>
+</p>
+<h4>Anticheat</h4>
+<p>
+  There's another type of inter-process dependency that can ship with a game, and thats its anticheat.  I'm not going to stand on a soap box and proclaim that anticheat software shouldn't ship with games, because it's objectively important to the integrity and playerbase of a multiplayer game.  But it does add startup time to games, and it does add complexity.  It is, however, a necessary evil.  I begrudgingly accept that, at least.
+</p>
+<figure>
+  <img
+    class="blog-image"
+    style="border: 2px solid white"
+    src="/img/post-data/2025/startup-vanguard.png"
+    alt="screenshot"
+  />
+  <figcaption>
+    Vanguard polluting my system tray (among other things).
+  </figcaption>
+</figure>
+<p>
+  But how much should I be forced to accept?  I really hate booting my machine and finding Riot Vanguard in the list of required startup processes, knowing also that Javelin is there in the background too just waiting for me to launch Battlefield 6.  Why?  Not only is this affecting the startup time of the game I want to run, but since it runs at machine level, tt affects my gosh-darn machine's STARTUP time!  That really grinds my gears.
+</p>
+<p>
+  And then there's DRM.
+</p>
+<p>
+  I can't talk about anticheat without mentioning Digital Rights Management, and the ways companies check to make sure you actually own the software you're running.  In the old days DRM usually came in the form of some convoluted part of the CD you put in the system tray that checked the authenticity of the program you were running.  Nowadays this is less archaic, but certainly still a thing.  Steam is basically DRM, as the games you play are linked to an account.  Of course, something that checks whether or not you are allowed to start a game is going to impact startup time.  Any game with an additional launcher would also count in this process.
+</p>
+<figure>
+  <img
+    class="blog-image"
+    style="border: 2px solid white"
+    src="/img/post-data/2025/startup-nathan-baggs.png"
+    alt="screenshot"
+  />
+  <figcaption>
+    In his video <a href="https://www.youtube.com/watch?v=D8VZdHS51cU">
+      Hacking DRM To Save An Old Game</a>, Youtuber <a href="https://www.youtube.com/@nathanbaggs">Nathan Baggs</a> expertly cracks the DRM for Michelin Rally Masters: Race of Champions by stepping through the decompiled code.
+  </figcaption>
+</figure>
+<p>
+  If you release your game on Steam and you don't have it available in a place like GoG or itch.io, then you are committing to having Steam's DRM affect the startup of your game.  Despite the fact that this decision impacts your game's longevity, it is at the very least tolerable to have Steam as a distribution platform as it provides availability and features that would be quite bothersome to code yourself.  But it does affect startup time.  As a developer who values boot time, disable as much Steam functionality as you can afford when distributing a game on that platform.
+<figure>
+  <img
+    class="blog-image"
+    style="border: 2px solid white"
+    src="/img/post-data/2025/startup-king.png"
+    alt="screenshot"
+  />
+  <figcaption>
+    King's Quest 6 shipped with "DRM" where you couldn't get past this cliff without decoding symbols from the game with the manual that came with the box. 🤷 At least it didn't affect the startup time!
+  </figcaption>
+</figure>
+<h4>Compiling Shaders</h4>
+<p>
+  A lot of modern games include a separate load screen before showing you the menu that informs you it is "compiling shaders." Years ago, you wouldn't have seen this loading screen as its own separate thing, but it still would have been happening in the background.  You can compile a binary for Windows and expect the operating system to help you out in regards to how to run it, but you can't expect the same of video cards.  So games typically compile their shaders when the game boots or even, when it loads data, just so that it can be sure the shader will run on the system's hardware. The fact that this process is now its own separate loading screen indicates that developers are acknowledging that the startup time of the game is longer due to something that is introduced by the program.
+</p>
+<figure>
+  <img
+    class="blog-image"
+    style="border: 2px solid white"
+    src="/img/post-data/2025/startup-compiling-shaders.png"
+    alt="screenshot"
+  />
+  <figcaption>
+    Battlefield 6 compiling shaders for the 100th time on my machine.
+  </figcaption>
+</figure>
+<p>
+  I don't actually mind this step.  Modern games use modern shaders, which are definitely more complex than whatever was in KOTOR in the past.  This actually feels like a normal consequence of the complexity that can be achieved with modern technology.
+</p>
+<h4>Initialize Everything!</h4>
+<p>
+  When you're just learning programming, and in a particular game programming, you might follow some tutorials on how to make a game.  Often times these tutorials will teach you as quickly as possible how to get something on the screen, running, and tinkerable.  In this process, they'll neglect architectural or optimization choices just so the code is easier to understand.  This is good, as it fulfils the purpose of the tutorial: to get you to learn something from scratch.  But if that's you're only way to learn how to make a program you're going to run into problems.  
+</p>
+<section class="aside">
+  <p>
+    Did you know that calling <pre>SDL_InitSubSystem(SDL_INIT_JOYSTICK);</pre> can take <a href="https://stackoverflow.com/questions/18565320/very-slow-startup-using-sdl-2-on-os-x-10-8">several seconds to resolve</a>? (Yes this still happens to this day.)  Maybe you shouldn't call that function until you need it.
+  </p>
+</section>
+<p>
+  Notably, tutorials often have you initialize all your subsystems and load all your assets up front to allow you easy access to everything... at the cost of startup time.  On your simple tutorial project, this is hardly even 1ms.  As it grows, this can make your game boot slower and slower.  But you're too afraid to fix it because you've already done so much work to get it to the point it is and a refactor would most certainly break it.
+</p>
+<p>
+  I don't think that AAA games nowadays make this mistake architecturally.  I actually think the developers put a lot of thought into how exactly their game will load (I mean look at the compiling-shaders stuff above).  But I think that only goes so far.
+</p>
+<p>
+  Games nowadays are typically developed with a game engine, like Unreal or Unity. In a lot of cases, these engines do a lot of the initialization and heavy lifting for you.  They provide pipelines for assets to be compiled together, they provide built-in ways to interface with the graphics and system, they compile your game to targets for Windows/Xbox/Playstation/Switch, and basically infinity more things.  That's a lot of complicated things!  Unless you want to re-write or deeply understand all of these features, you are going to defer or trust that the engine you're using is going to handle them for you.
+</p>
+<figure>
+  <img
+    class="blog-image"
+    style="border: 2px solid white"
+    src="/img/post-data/2025/startup-unreal5.png"
+    alt="screenshot"
+  />
+  <figcaption>
+    An early Unreal Engine 5 splash.
+  </figcaption>
+</figure>
+<p>
+  I may not be employed by a AAA game company, but I know very large enterprise software.  If your software is built on a framework like Java Spring, Ruby on Rails, React and Express etc, you're making the same decision that game developers might do with a game engine.  A decision for stability.
+</p>
+<p>
+  Picture it: you set up your project optimally with a known framework, it works great for a few years as you add feature after feature, but then over time you add so much stuff to it that it becomes overcomplicated and heavy.  So heavy that it takes minutes, if not hours just to start.  You're past the point of changing architecture: your software is used too much to risk changing tech stacks, and upgrading to new versions is way too risky for the userbase you have.  At some point you're going to just flat out accept that the startup time does not matter if your program is working.  Even if development is annoying.
+</p>
+<p>
+  And that is a tragedy.  If you don't allocate enough time to the startup time of your program, your going to end up in a bad place as you add complexity to it.  It means you don't understand enough of how it works to risk making it better.  As a startup-time-conscious developer, you should not neglect knowing everything your program is doing as it starts up.
+</p>
+<h4>Conclusion</h4>
+<p>
+  Generally I'd sum up these reasons for extra startup as: bloat and complexity.  Games are doing so much more nowadays than they were in the past, whether its useful or not, and that translates and correlates to really long startup times.  Yeah, it's annoying, but it is one of those things that I can only apply to that common saying: control what you can control.
+</p>
