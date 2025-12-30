@@ -316,12 +316,12 @@ const movePuppet = (puppetName, x, y) => {
 </code></pre>
 <p>
   Instead of storing each line by itself in an array, the example expands to
-  JSON objects that include a command (cmd). This is a function that is run at
-  the same time the text is shown, and its purpose is to provide a way to
-  manipulate the puppets via functions that the engine exposes. These functions
-  are "shakePuppet" and "movePuppet". These represent the levers a writer has to
-  control the puppets. Using just those two functions in various combinations
-  there is an obvious positive effect to the scene! That's pretty cool.
+  JSON objects that include a command (cmd). This controls what the puppet does
+  at the same time the text is shown. For now, the puppet has some limited
+  actions as provided by the engine: "shakePuppet" and "movePuppet". These
+  represent the levers a writer has to control the puppets. Using just those two
+  functions in various combinations there is an obvious positive effect to the
+  scene! That's pretty cool.
 </p>
 <p>
   With this version, the writer now has more levers that can be used to depict a
