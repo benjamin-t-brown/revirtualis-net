@@ -148,7 +148,7 @@ figcaption {
 }
 
 section {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .hidden {
@@ -513,7 +513,7 @@ section {
   color: var( --color-text2);
   padding: 16px;
   border-radius: 8px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .blog-iframe {
