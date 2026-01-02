@@ -38,7 +38,7 @@ const createHomePage = (
   recentPosts: BlogPostData[],
   featuredGame: GamePostData
 ) => {
-  return /*html*/ `
+  return /*jsx*/ `
 <h1>Revirtualis</h1>
 <section class="card post">
   <div class="home-foreword">
@@ -52,7 +52,7 @@ const createHomePage = (
   </div>
 </section>
 <div class='card post'><h2 class="recent-posts-title">Recent Posts</h2></div>
-${recentPosts.map((p) => createBlogPost(p, { showTitle: true, isPreview: true })).join('\n')}
+${recentPosts.map((p) => createBlogPost(p, { showTitle: true, isPreview: false, showOverlay: true })).join('\n')}
 `;
 };
 

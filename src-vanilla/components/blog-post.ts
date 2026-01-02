@@ -13,7 +13,7 @@ export const createBlogPost = (
   const tags = post.tags.map(
     (tag) => `<a href='/blog-tags/${tag}' class='post-tag'>${tag}</a>`
   );
-  return /*html*/ `
+  return /*jsx*/ `
 <section class='card post' style="position: relative; ${args.showOverlay ? 'overflow: hidden; max-height: 300px;' : ''}">
   ${args.showTitle ? `<h3><a href='/blog-posts/${post.id}.html' class='post-link ${args.isPreview ? 'post-link-preview' : ''}'>${post.title}</a></h3>` : ''}
   <div class="post-info">

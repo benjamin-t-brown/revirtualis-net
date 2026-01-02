@@ -96,7 +96,9 @@
   <div class="post-content"><p>
    My JS13k 2025 entry for the theme "Black Cat" is the game <a href="https://js13kgames.com/2025/games/witch-potion">Witch Potion</a>.
    
-   <img class="blog-image" style="border: 2px solid white" src="/img/post-data/witch-potion-icon.png" alt="screenshot"></img>
+   <a href="/img/post-data/witch-potion-icon.png" target="_blank">
+     <img class="blog-image" style="border: 2px solid white" src="/img/post-data/witch-potion-icon.png" alt="screenshot"></img>
+   </a>
 
    It's a minimalistic, dialogue choice driven game about becoming a witch and mixing potions.  As always, I used this competition as a tool to explore some things I had been wondering lately.
 </p>
@@ -231,14 +233,20 @@ class Button {
 <p>
   I thought this was a great base for the kind of game I wanted to make. A game like this requires a lot of ui elements: dice, icons, event descriptions, choices, lore, resources... And since it's a video game, it should leverage the ability to easily interact with all these things with clicks or taps.  A good start, to be sure; I just had to fit the theme of Black Cat. I settled on the idea of the Black Cat being some kind of witch's familiar, and of course I've seen games like <a href="https://store.steampowered.com/app/1210320/Potion_Craft_Alchemist_Simulator/">Potion Craft</a> which aim to emulate a potion-crafter's life in a medieval town.  It's a proven theme, so I thought it would be good to use. So, here's what I came up with.
 <span style="display: flex; align-items: center; flex-wrap: wrap;">
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-ss1.png" alt="screenshot"></img>
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-ss1-legend.png" alt="screenshot"></img>
+  <a href="/img/post-data/2025/witch-potion-ss1.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-ss1.png" alt="screenshot"></img>
+  </a>
+  <a href="/img/post-data/2025/witch-potion-ss1-legend.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-ss1-legend.png" alt="screenshot"></img>
+  </a>
   </span>
 </p>
 <p>
   That's a lot of complex ui!  I shudder to think how much space that would take to write from scratch in a canvas.  And that's to say nothing about the spinning dice or the way the events auto-scroll down smoothly:
 
-  <img class="blog-image" src="/img/post-data/2025/witch-potion1.gif" alt="screenshot"></img>  
+  <a href="/img/post-data/2025/witch-potion1.gif" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion1.gif" alt="screenshot"></img>
+  </a>
 </p>
 <p>
   Each of these ui elements are constructed via a simple function.  This function returns a record of at least the root element, but also a reference to any important elements within the component.  It uses the createElement api to construct a DIV, P, BUTTON, or SPAN depending on the need.  There are some helper functions in there that wrap the DOM api so that there's less verbosity, but overall it's quite succinct.
@@ -323,7 +331,9 @@ export interface GameEventChild {
 </p>
 <p>
   Simple, but useful.  An example of this kind of event is right in the beginning of the game where the Black Cat informs you of the situation:
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-ss2.png" alt="screenshot"></img> 
+  <a href="/img/post-data/2025/witch-potion-ss2.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-ss2.png" alt="screenshot"></img>
+  </a>
 </p>
 <p>
   For something more interesting, the GameEventChild can be expanded to provide data for some choices.
@@ -342,7 +352,9 @@ export interface GameEventChild {
 </p>
 <p>
   This data structure is starting to look a lot like a tree, one which the Player navigates to a desired outcome.  The game can use this data to present a list of choices for what the next GameEventChild to execute should be.  There's some additional functionality in there to disable this choice given some condition: the Player may only be able to make this choice if they have enough gold or meet some other condition.
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-ss3.png" alt="screenshot"></img> 
+  <a href="/img/post-data/2025/witch-potion-ss3.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-ss3.png" alt="screenshot"></img>
+  </a>
 </p>
 <p>
   So how do we include data to tell the game to do something when a choice is made?  That depends on what we want to do.  For a game like this, where the Player is managing resources, it is important for events to be able to modify any resource that the Player has.  So, additional optional data can be stored here that represents a resource modification.
@@ -362,7 +374,9 @@ export interface GameEventChild {
 </p>
 <p>
   Each mod or modification string is encoded as a number and a resource: '2 GOLD', '3 SPARKLEWEED' etc.  When a GameEventChild is run, the game can look at that mod list and alter the state of the game.  For the Player, we see this as some deliberate text.  It should be obvious what resources are added and removed each time this happens or you risk giving the Player lots of frustration:
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-ss4.png" alt="screenshot"></img> 
+  <a href="/img/post-data/2025/witch-potion-ss4.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-ss4.png" alt="screenshot"></img>
+  </a>
 </p>
 <p>
   The full data structure supports a few other bits and bobs, and is extendable as other features become necessary.
@@ -373,7 +387,9 @@ export interface GameEventChild {
 </p>
 <p>
   Instead, it would be nice if there was a syntax specifically for specifying these events which was easier to write.  Then a parser could convert it to the underlying JSON which is then put in the game... And so that's how it works.  This is an example of a "Witch Potion Event" file, or .wpe.
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-events-file.png" alt="screenshot"></img>
+  <a href="/img/post-data/2025/witch-potion-events-file.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-events-file.png" alt="screenshot"></img>
+  </a>
 </p>
 <p>
   I ended up writing a VSCode plugin for syntax highlighting so that it was easier to visually parse.  Events are prefixed with # and children with >.  Individual components of an event child are prefixed with +.  But the most important thing this syntax allows is variables.
@@ -420,7 +436,9 @@ export interface GameEventChild {
 <h4>Emoji Usage</h4>
 <p>
   To save space this game uses emojis instead of custom svg icons for a little flair.  🐈‍⬛💰🌿🧪🧴🌱🐲🧙🏿‍♀️📃♥️🔥.  There's a problem though, in that different operating systems/contexts render these all slightly differently.
-  <img class="blog-image" src="/img/post-data/2025/emoji-compare.png" alt="screenshot"></img>
+  <a href="/img/post-data/2025/emoji-compare.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/emoji-compare.png" alt="screenshot"></img>
+  </a>
 </p>
 <p>
   For some reason, I did not know that before doing this project.  TIL.  They're all close enough that it doesn't matter all that much, but I did get comments about the "purple cat" instead of the black cat.  To make them a bit more homogenous and give some alternate icons, a css 'filter' is applied to various icons.  This can be seen in the resource area.
@@ -429,7 +447,9 @@ filter: hue-rotate(${degrees}deg);
 ...
 filter: grayscale(75%);
 </code></pre>
-  <img class="blog-image" src="/img/post-data/2025/witch-potion-ss5.png" alt="screenshot"></img>
+  <a href="/img/post-data/2025/witch-potion-ss5.png" target="_blank">
+    <img class="blog-image" src="/img/post-data/2025/witch-potion-ss5.png" alt="screenshot"></img>
+  </a>
 </p>
 <h4>Ludonarrative Harmony</h4>
 <p>When the idea of a potions shop started forming in my head, I had initially imagined a bunch of ingredients, mixing a bunch of complex potions that did all sorts of different things.  Then selling these potions to villagers in a desperate attempt to get enough money to please the Black Cat.  I ended up pairing that back quite a bit, but not just because I couldn't fit it in.</p>

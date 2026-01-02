@@ -16,9 +16,18 @@ export const createRoute = (posts: BlogPostData[]) => {
 };
 
 const createBlogPage = (posts: BlogPostData[]) => {
-  return /*html*/ `
+  const postsHtml = posts
+    .map((postListContent, i) =>
+      createBlogPost(postListContent, {
+        showTitle: true,
+        showOverlay: i < 5 ? true : false,
+        isPreview: i < 5 ? false : true,
+      })
+    )
+    .join('\n');
+  return /*xml*/ `
 <h1>Blog</h1>
-${posts.map((postListContent, i) => createBlogPost(postListContent, { showTitle: true, showOverlay: i < 5 ? true : false, isPreview: i < 5 ? false : true })).join('\n')}
+${postsHtml}
 </div>
 `;
 };
