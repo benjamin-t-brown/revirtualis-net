@@ -4,7 +4,7 @@ Requires node >= 22.
 
 Install deps with 'npm install'.
 
-Build dist folder with 'npm run build:vanilla'.
+Build dist folder with 'npm run build'.
 
 This is a static site generator.  The resulting dist folder will contain a static website with all required html, images, fonts, styles, and images.
 
