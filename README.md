@@ -6,7 +6,7 @@ Install deps with 'npm install'.
 
 Build dist folder with 'npm run build:vanilla'.
 
-This is a static site generator.  The resulting dist folder will contain a contained website with all required html, images, fonts, styles, and images.
+This is a static site generator.  The resulting dist folder will contain a static website with all required html, images, fonts, styles, and images.
 
 The only external dependencies are [https://umami.is/](umamy analytics) and [https://highlightjs.org/](https://highlightjs.org/) which is used to highlight code snippets.  The site still works without it, but it will look like "pre" fields with no highlighting.
 
